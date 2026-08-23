@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prime Sport Santé — Performance • Santé • Régénération</title>
+<meta name="description" content="Prime Sport Santé — Centre sport-santé premium à Bourg-en-Bresse. Performance, récupération, rééducation. Un concept JL Bourg × SANA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --night:#030D23;--prime:#135BB0;--fit:#135BB0;--well:#1FA8B8;--back:#A9826A;
+  --white:#FFFFFF;--light:#F5F7FA;--gray-100:#D9DEE5;
+  --text-dark:#1a2238;--text-body:#3a4560;--text-light:rgba(255,255,255,.85);
+  --text-muted:rgba(255,255,255,.55);
+  --glass:rgba(255,255,255,.06);--glass-border:rgba(255,255,255,.1);
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--white);color:var(--text-dark);font-family:'Inter',sans-serif;font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,h5{font-family:'Montserrat',sans-serif;font-weight:700;line-height:1.15;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 40px}
+.icon{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(3,13,35,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06);transition:all .4s;overflow:visible}
+nav.scrolled{background:rgba(3,13,35,.97)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 40px;height:130px}
+.nav-logo{display:flex;align-items:center;flex-shrink:0}
+.nav-logo img{height:120px;width:auto;object-fit:contain}
+.nav-links{display:flex;gap:32px;list-style:none;align-items:center}
+.nav-links a{font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.55);transition:color .3s;white-space:nowrap}
+.nav-links a:hover{color:#fff}
+.nav-cta{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:10px 24px;border:1px solid var(--prime);border-radius:4px;color:var(--prime);transition:all .3s;background:transparent}
+.nav-cta:hover{background:var(--prime);color:#fff}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px}
+.mobile-toggle span{width:22px;height:1.5px;background:#fff;display:block}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--night);position:relative;overflow:hidden;padding-top:130px}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 45%,rgba(19,91,176,.08) 0%,transparent 70%)}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:900px;padding:40px 32px 80px}
+.hero-video-wrap{width:260px;height:260px;margin:0 auto 28px;overflow:hidden;border-radius:50%;border:2px solid rgba(19,91,176,.2);box-shadow:0 0 60px rgba(19,91,176,.15)}
+.hero-video-wrap video{width:100%;height:100%;object-fit:cover}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--prime);border:1px solid rgba(19,91,176,.3);padding:8px 24px;border-radius:100px;margin-bottom:40px;font-weight:600}
+.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--prime);animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-size:clamp(38px,6vw,72px);margin-bottom:24px;font-weight:800;letter-spacing:-.03em;color:#fff}
+.hero h1 .accent{color:var(--prime)}
+.hero-sub{font-size:clamp(15px,1.6vw,17px);color:var(--text-muted);max-width:560px;margin:0 auto 48px;line-height:1.9;font-weight:300}
+.hero-poles{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:48px}
+.hero-pole{display:flex;align-items:center;gap:10px;padding:14px 28px;border-radius:8px;background:var(--glass);border:1px solid var(--glass-border);font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;transition:all .4s;cursor:pointer}
+.hero-pole:hover{transform:translateY(-3px);border-color:currentColor}
+.hero-pole.fit{color:var(--fit)}.hero-pole.well{color:var(--well)}.hero-pole.back{color:var(--back)}
+.hero-pole .pole-line{width:16px;height:2px;background:currentColor;border-radius:1px}
+.hero-sig{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--text-muted)}
+.scroll-ind{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-ind span{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted)}
+.scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,var(--prime),transparent);animation:sp 2.5s ease infinite}
+@keyframes sp{0%{opacity:1;height:36px}50%{opacity:.2;height:20px}100%{opacity:1;height:36px}}
+
+/* SECTIONS */
+.section{padding:100px 0}
+.section-dark{background:var(--night);color:#fff}
+.section-light{background:var(--white)}
+.section-soft{background:var(--light)}
+.section-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:12px}
+.section-label::before{content:'';width:24px;height:1.5px;background:currentColor}
+.section-title{font-size:clamp(28px,4.5vw,48px);margin-bottom:20px}
+.section-desc{font-size:15px;max-width:560px;line-height:1.85}
+.section-dark .section-desc{color:var(--text-light)}
+.section-light .section-desc,.section-soft .section-desc{color:var(--text-body)}
+
+/* CONCEPT CARDS */
+.concept-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:56px}
+.concept-step{text-align:center;padding:32px 16px 28px;border-radius:14px;position:relative;overflow:hidden;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.concept-step-bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.concept-step-overlay{position:absolute;inset:0;background:rgba(255,255,255,.5);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);z-index:1}
+.concept-step-content{position:relative;z-index:2}
+.concept-arrow{position:absolute;right:-12px;top:50%;transform:translateY(-50%);z-index:3;color:var(--prime);font-size:18px;font-weight:700}
+.concept-step:last-child .concept-arrow{display:none}
+.concept-step-num{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--prime);letter-spacing:2px;margin-bottom:10px;text-shadow:0 1px 3px rgba(255,255,255,.6)}
+.concept-step-icon{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--prime);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;color:var(--prime);background:rgba(255,255,255,.7);backdrop-filter:blur(4px)}
+.concept-step h4{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;color:var(--text-dark);text-shadow:0 1px 3px rgba(255,255,255,.6)}
+
+/* POLE SECTIONS */
+.pole-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.pole-content .section-label{margin-bottom:10px}
+.pole-content .section-title{font-size:clamp(26px,3.5vw,42px);margin-bottom:16px}
+.pole-content .section-desc{margin-bottom:28px}
+.pole-features{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:24px}
+.pole-feature{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;font-size:13px;font-weight:500}
+.section-dark .pole-feature{background:var(--glass);border:1px solid var(--glass-border);color:var(--text-light)}
+.section-light .pole-feature,.section-soft .pole-feature{background:var(--light);border:1px solid var(--gray-100);color:var(--text-dark)}
+.section-soft .pole-feature{background:var(--white)}
+.pole-feature-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pole-stats{display:flex;gap:40px}
+.pole-stat-value{font-family:'Montserrat',sans-serif;font-size:32px;font-weight:800}
+.pole-stat-label{font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-top:2px}
+.section-dark .pole-stat-label{color:var(--text-muted)}
+.section-light .pole-stat-label,.section-soft .pole-stat-label{color:var(--text-body);opacity:.6}
+.pole-visual{border-radius:16px;overflow:hidden;aspect-ratio:4/3;position:relative}
+.pole-visual img{width:100%;height:100%;object-fit:cover}
+.pole-visual-badge{position:absolute;top:16px;left:16px;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 14px;border-radius:4px;z-index:2}
+.pole-tagline{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;letter-spacing:.5px;margin-bottom:24px;font-style:italic}
+
+.pole-fit .section-label{color:var(--fit)}.pole-fit .pole-stat-value{color:var(--fit)}
+.pole-fit .pole-feature-icon{background:rgba(19,91,176,.1);color:var(--fit)}
+.section-dark .pole-fit .pole-feature-icon{background:rgba(19,91,176,.2)}
+.pole-fit .pole-visual-badge{background:rgba(19,91,176,.15);color:var(--fit);border:1px solid rgba(19,91,176,.3)}
+.pole-fit .pole-tagline{color:var(--fit)}
+.pole-well .section-label{color:var(--well)}.pole-well .pole-stat-value{color:var(--well)}
+.pole-well .pole-feature-icon{background:rgba(31,168,184,.1);color:var(--well)}
+.pole-well .pole-visual-badge{background:rgba(31,168,184,.12);color:var(--well);border:1px solid rgba(31,168,184,.25)}
+.pole-well .pole-tagline{color:var(--well)}
+.pole-back .section-label{color:var(--back)}.pole-back .pole-stat-value{color:var(--back)}
+.pole-back .pole-feature-icon{background:rgba(169,130,106,.1);color:var(--back)}
+.section-soft .pole-back .pole-feature-icon{background:rgba(169,130,106,.08)}
+.pole-back .pole-visual-badge{background:rgba(169,130,106,.12);color:var(--back);border:1px solid rgba(169,130,106,.25)}
+.pole-back .pole-tagline{color:var(--back)}
+
+/* EQUIPMENT */
+.equip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.equip-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:14px;padding:28px 24px;position:relative;overflow:hidden;transition:all .4s}
+.equip-card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.15)}
+.equip-card-pole{font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:3px 10px;border-radius:3px;display:inline-block;margin-bottom:14px}
+.equip-card-pole.fit{background:rgba(19,91,176,.15);color:var(--fit)}
+.equip-card-pole.well{background:rgba(31,168,184,.15);color:var(--well)}
+.equip-card-pole.back{background:rgba(169,130,106,.15);color:var(--back)}
+.equip-card-pole.global{background:rgba(19,91,176,.15);color:var(--prime)}
+.equip-card h4{font-size:17px;margin-bottom:8px;font-weight:700;color:#fff}
+.equip-card p{font-size:13px;color:var(--text-light);line-height:1.7;opacity:.8;margin-bottom:14px}
+.equip-card-line{position:absolute;top:0;left:0;right:0;height:2px}
+.equip-card-line.fit{background:linear-gradient(90deg,var(--fit),transparent)}
+.equip-card-line.well{background:linear-gradient(90deg,var(--well),transparent)}
+.equip-card-line.back{background:linear-gradient(90deg,var(--back),transparent)}
+.equip-card-line.global{background:linear-gradient(90deg,var(--prime),transparent)}
+.equip-video-btn{display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--prime);background:rgba(19,91,176,.1);border:1px solid rgba(19,91,176,.25);border-radius:6px;padding:8px 16px;cursor:pointer;transition:all .3s}
+.equip-video-btn:hover{background:rgba(19,91,176,.2);border-color:var(--prime)}
+.equip-video-btn svg{width:16px;height:16px;fill:var(--prime)}
+
+/* PARTNERS */
+.partners{margin-top:72px;padding-top:48px;border-top:1px solid rgba(255,255,255,.08)}
+.partners-label{font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--text-muted);text-align:center;margin-bottom:28px}
+.partners-logos{display:flex;align-items:center;justify-content:center;gap:56px;flex-wrap:wrap}
+.partners-logos a{display:flex;align-items:center;opacity:.8;transition:opacity .4s;background:rgba(255,255,255,.9);padding:12px 20px;border-radius:8px}
+.partners-logos a:hover{opacity:1}
+.partners-logos img{height:36px;width:auto;object-fit:contain}
+
+/* VIDEO MODAL */
+.video-modal{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.92);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s}
+.video-modal.active{opacity:1;pointer-events:all}
+.video-modal-inner{position:relative;width:90%;max-width:960px;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#000;box-shadow:0 24px 80px rgba(0,0,0,.6)}
+.video-modal-inner iframe{width:100%;height:100%;border:none}
+.video-modal-close{position:absolute;top:-48px;right:0;background:none;border:none;color:#fff;font-size:32px;cursor:pointer;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background .3s}
+.video-modal-close:hover{background:rgba(255,255,255,.1)}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:48px;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:16px}
+.contact-item{display:flex;gap:16px;padding:20px;background:var(--light);border:1px solid var(--gray-100);border-radius:12px}
+.contact-icon{width:42px;height:42px;border-radius:10px;background:rgba(19,91,176,.06);border:1px solid rgba(19,91,176,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--prime)}
+.contact-item h4{font-size:13px;margin-bottom:3px;font-weight:600;color:var(--text-dark)}
+.contact-item p{font-size:13px;color:var(--text-body);line-height:1.65}
+.contact-item em{font-style:italic;color:var(--prime);font-size:12px}
+.contact-map{aspect-ratio:4/3;border-radius:14px;overflow:hidden;border:1px solid var(--gray-100)}
+.contact-map iframe{width:100%;height:100%;border:none}
+
+/* FOOTER */
+footer{background:var(--night);border-top:1px solid rgba(255,255,255,.06);padding:56px 0 28px;color:#fff}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.footer-logo img{height:120px;width:auto;object-fit:contain}
+.footer-links{display:flex;gap:24px}
+.footer-links a{font-size:12px;color:var(--text-muted);transition:color .3s;letter-spacing:.5px}
+.footer-links a:hover{color:#fff}
+.footer-copy{font-size:11px;color:var(--text-muted);text-align:center;width:100%;margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.06)}
+.footer-copy span{color:var(--prime)}
+
+.divider{height:1px;background:var(--gray-100)}
+.fade-up{opacity:0;transform:translateY(28px);transition:all .65s cubic-bezier(.16,1,.3,1)}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.06s}.d2{transition-delay:.12s}.d3{transition-delay:.18s}.d4{transition-delay:.24s}.d5{transition-delay:.3s}
+
+@media(max-width:1024px){
+  .pole-grid{grid-template-columns:1fr;gap:40px}
+  .pole-grid.reverse .pole-visual{order:-1}
+  .concept-flow{grid-template-columns:repeat(3,1fr)}
+  .concept-step:nth-child(3) .concept-arrow{display:none}
+  .contact-grid{grid-template-columns:1fr}
+  .equip-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .container{padding:0 20px}
+  .nav-links,.nav-cta{display:none}
+  .mobile-toggle{display:flex}
+  .nav-inner{height:80px}
+  .nav-logo img{height:70px}
+  .hero{padding-top:80px}
+  .pole-features{grid-template-columns:1fr}
+  .section{padding:72px 0}
+  .equip-grid{grid-template-columns:1fr}
+  .concept-flow{grid-template-columns:1fr}
+  .concept-arrow{display:none!important}
+  .footer-inner{flex-direction:column;text-align:center}
+  .footer-logo img{height:80px}
+  .hero-video-wrap{width:200px;height:200px}
+  .hero-poles{flex-direction:column;align-items:center}
+}
+.mobile-nav{position:fixed;inset:0;z-index:999;background:rgba(3,13,35,.98);backdrop-filter:blur(24px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;pointer-events:none;transition:opacity .4s}
+.mobile-nav.open{opacity:1;pointer-events:all}
+.mobile-nav a{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.6);transition:color .3s}
+.mobile-nav a:hover{color:#fff}
+.mobile-nav-close{position:absolute;top:24px;right:24px;background:none;border:none;color:white;font-size:28px;cursor:pointer}
+</style>
+</head>
+<body>
+
+<nav id="nav"><div class="nav-inner">
+  <a href="#" class="nav-logo"><img src="images/logo-prime.png" alt="Prime Sport Santé"></a>
+  <ul class="nav-links">
+    <li><a href="#concept">Concept</a></li><li><a href="#fit" style="color:var(--fit)">Prime Fit</a></li><li><a href="#well" style="color:var(--well)">Prime Well</a></li>
+    <li><a href="#back" style="color:var(--back)">Prime Back</a></li><li><a href="#equipements">Technologies</a></li><li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Nous contacter</a>
+  <button class="mobile-toggle" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+</div></nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="toggleMobileNav()">&#x2715;</button>
+  <a href="#concept" onclick="toggleMobileNav()">Concept</a><a href="#fit" onclick="toggleMobileNav()" style="color:var(--fit)">Prime Fit</a>
+  <a href="#well" onclick="toggleMobileNav()" style="color:var(--well)">Prime Well</a><a href="#back" onclick="toggleMobileNav()" style="color:var(--back)">Prime Back</a>
+  <a href="#equipements" onclick="toggleMobileNav()">Technologies</a><a href="#contact" onclick="toggleMobileNav()">Contact</a>
+</div>
+
+<div class="video-modal" id="videoModal" onclick="closeVideo(event)">
+  <div class="video-modal-inner">
+    <button class="video-modal-close" onclick="closeVideoModal()">&#x2715;</button>
+    <iframe id="videoFrame" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-video-wrap fade-up"><video autoplay muted loop playsinline preload="auto"><source src="images/video-logo.mp4" type="video/mp4"></video></div>
+    <div class="hero-badge fade-up d1"><span class="dot"></span>Ouverture septembre 2027 — Bourg-en-Bresse</div>
+    <h1 class="fade-up d2">Bougez mieux.<br>Vivez mieux.<br><span class="accent">Plus longtemps.</span></h1>
+    <p class="hero-sub fade-up d3">Un concept unique né du partenariat JL Bourg × SANA. Nous accompagnons chaque personne pour performer durablement, préserver sa santé et régénérer son corps sur le long terme.</p>
+    <div class="hero-poles fade-up d4">
+      <a href="#fit" class="hero-pole fit"><span class="pole-line"></span>Prime Fit</a>
+      <a href="#well" class="hero-pole well"><span class="pole-line"></span>Prime Well</a>
+      <a href="#back" class="hero-pole back"><span class="pole-line"></span>Prime Back</a>
+    </div>
+    <p class="hero-sig fade-up d5">Performance &bull; Santé &bull; Régénération</p>
+  </div>
+</section>
+
+<!-- CONCEPT -->
+<section class="section section-light" id="concept"><div class="container">
+  <div class="section-label fade-up" style="color:var(--prime)">Le concept</div>
+  <h2 class="section-title fade-up d1">Un écosystème <span style="color:var(--prime)">complet</span><br>et personnalisé.</h2>
+  <p class="section-desc fade-up d2">Prime Sport Santé réunit sous un même toit un parcours cohérent entre accueil, évaluation, entraînement, soin et récupération. Un lieu unique au service de la performance, de la santé et de la régénération.</p>
+  <div class="concept-flow fade-up d3">
+    <div class="concept-step"><div class="concept-step-bg" style="background-image:url(images/concept-accueil.jpg)"></div><div class="concept-step-overlay"></div><div class="concept-step-content"><div class="concept-step-num">01</div><div class="concept-step-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h4>Accueil</h4></div><span class="concept-arrow">→</span></div>
+    <div class="concept-step"><div class="concept-step-bg" style="background-image:url(images/concept-evaluation.jpg)"></div><div class="concept-step-overlay"></div><div class="concept-step-content"><div class="concept-step-num">02</div><div class="concept-step-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><h4>Évaluation</h4></div><span class="concept-arrow">→</span></div>
+    <div class="concept-step"><div class="concept-step-bg" style="background-image:url(images/concept-entrainement.jpg)"></div><div class="concept-step-overlay"></div><div class="concept-step-content"><div class="concept-step-num">03</div><div class="concept-step-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="1" y="10" width="3" height="4" rx="1"/><rect x="20" y="10" width="3" height="4" rx="1"/><line x1="4" y1="12" x2="20" y2="12"/><rect x="7" y="8" width="3" height="8" rx="1"/><rect x="14" y="8" width="3" height="8" rx="1"/></svg></div><h4>Entraînement</h4></div><span class="concept-arrow">→</span></div>
+    <div class="concept-step"><div class="concept-step-bg" style="background-image:url(images/concept-soin.jpg)"></div><div class="concept-step-overlay"></div><div class="concept-step-content"><div class="concept-step-num">04</div><div class="concept-step-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h4>Soin</h4></div><span class="concept-arrow">→</span></div>
+    <div class="concept-step"><div class="concept-step-bg" style="background-image:url(images/concept-recuperation.jpg)"></div><div class="concept-step-overlay"></div><div class="concept-step-content"><div class="concept-step-num">05</div><div class="concept-step-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div><h4>Récupération</h4></div></div>
+  </div>
+</div></section>
+
+<div class="divider"></div>
+
+<!-- PRIME FIT -->
+<section class="section section-dark pole-fit" id="fit"><div class="container"><div class="pole-grid">
+  <div class="pole-content">
+    <div class="section-label fade-up">Prime Fit</div>
+    <h2 class="section-title fade-up d1" style="color:#fff">L'expérience<br>de l'exclusivité.</h2>
+    <p class="pole-tagline fade-up d2">Training • Santé • Performance</p>
+    <p class="section-desc fade-up d2">Un environnement premium combinant entraînement, technologie EGYM et coaching personnalisé. L'esthétique de la performance emprunte aux codes de l'hôtellerie de luxe pour offrir une expérience unique à chaque membre.</p>
+    <div class="pole-features fade-up d3">
+      <div class="pole-feature"><div class="pole-feature-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="1" y="10" width="3" height="4" rx="1"/><rect x="20" y="10" width="3" height="4" rx="1"/><line x1="4" y1="12" x2="20" y2="12"/><rect x="7" y="8" width="3" height="8" rx="1"/><rect x="14" y="8" width="3" height="8" rx="1"/></svg></div>Zone EGYM connectée</div>
+      <div class="pole-feature"><div class="pole-feature-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>Plateau poids libres</div>
+      <div class="pole-feature"><div class="pole-feature-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M3 3v18h18"/><polyline points="7,14 11,10 15,13 21,7"/></svg></div>Bilan BioAge</div>
+      <div class="pole-feature"><div class="pole-feature-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></div>Coaching personnalisé</div>
+      <div class="pole-feature"><div class="pole-feature-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>Cardio premium</div>
+      <div class="pole-feature"><div class="pole-feature-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>Accès VIP+</div>
+    </div>
+    <div class="pole-stats fade-up d4">
+      <div><div class="pole-stat-value">220</div><div class="pole-stat-label">m² dédiés</div></div>
+      <div><div class="pole-stat-value">18</div><div class="pole-stat-label">machines connectées</div></div>
+      <div><div class="pole-stat-value">3</div><div class="pole-stat-label">zones complémentaires</div></div>
+    </div>
+  </div>
+  <div class="pole-visual fade-up"><img src="images/plateau-fit.jpg" alt="Plateau Prime FIT"><div class="pole-visual-badge">Performance</div></div>
+</div></div></section>
+
+<!-- PRIME WELL -->
+<section class="section section-light pole-well" id="well"><div class="container"><div class="pole-grid reverse">
+  <div class="pole-visual fade-up"><img src="images/couloir-well.jpg" alt="Couloir Prime WELL"><div class="pole-visual-badge">Récupération</div></div>
+  <div class="pole-content">
+    <div class="section-label fade-up">Prime Well</div>
+    <h2 class="section-title fade-up d1">Le Blueprint de la<br>Performance & <span style="color:var(--well)">Régénération.</span></h2>
+    <p class="pole-tagline fade-up d2">Santé • Équilibre • Bien-être</p>
+    <p class="section-desc fade-up d2">Prime Well transforme une addition de technologies en un protocole sur-mesure. Les standards du sport professionnel, accessibles à tous. Méthode : Tester → Orienter → Agir → Suivre.</p>
+    <div class="pole-features fade-up d3">
+      <div class="pole-feature"><div class="pole-feature-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="12" y1="5" x2="12" y2="13"/></svg></div>Cryothérapie −110°C</div>
+      <div class="pole-feature"><div class="pole-feature-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M4 19c2-2 4-6 4-10a4 4 0 0 1 8 0c0 4 2 8 4 10"/><path d="M4 19h16"/></svg></div>Hydromassage MedWave</div>
+      <div class="pole-feature"><div class="pole-feature-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="23" y2="12"/></svg></div>Photobiomodulation LED</div>
+      <div class="pole-feature"><div class="pole-feature-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg></div>Pressothérapie JOLT</div>
+      <div class="pole-feature"><div class="pole-feature-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/></svg></div>BTL SisDuo — 6 protocoles</div>
+      <div class="pole-feature"><div class="pole-feature-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3c-1.5 2-4 4-4 8 0 2.5 1.8 5 4 5s4-2.5 4-5c0-4-2.5-6-4-8z"/><path d="M12 16v6"/><path d="M8 22h8"/></svg></div>Sauna infrarouge Sunlighten</div>
+    </div>
+    <div class="pole-stats fade-up d4">
+      <div><div class="pole-stat-value">150</div><div class="pole-stat-label">m² bien-être</div></div>
+      <div><div class="pole-stat-value">6</div><div class="pole-stat-label">parcours protocolés</div></div>
+      <div><div class="pole-stat-value">7</div><div class="pole-stat-label">technologies</div></div>
+    </div>
+  </div>
+</div></div></section>
+
+<div class="divider"></div>
+
+<!-- PRIME BACK -->
+<section class="section section-soft pole-back" id="back"><div class="container"><div class="pole-grid">
+  <div class="pole-content">
+    <div class="section-label fade-up">Prime Back</div>
+    <h2 class="section-title fade-up d1">L'ingénierie<br>de la <span style="color:var(--back)">rééducation.</span></h2>
+    <p class="pole-tagline fade-up d2">Kinésithérapie • Rééducation • Réathlétisation</p>
+    <p class="section-desc fade-up d2">Prime Back est un cabinet de kinésithérapie ouvert à toute la patientèle — du sportif en reprise de compétition au patient post-opératoire, en passant par les pathologies chroniques, la rééducation fonctionnelle et la prévention. Le plateau est équipé de technologies de rupture habituellement réservées aux centres de performance, mais l'équipe de six kinésithérapeutes accueille tous les publics avec la même exigence de qualité.</p>
+    <div class="pole-features fade-up d3">
+      <div class="pole-feature"><div class="pole-feature-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>Station TUR Isoforce</div>
+      <div class="pole-feature"><div class="pole-feature-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><path d="M5 22l3-9 4 3 4-3 3 9"/></svg></div>Anti-gravité BTL R-Force</div>
+      <div class="pole-feature"><div class="pole-feature-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>6 kinésithérapeutes</div>
+      <div class="pole-feature"><div class="pole-feature-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg></div>Biofeedback & Échographie</div>
+      <div class="pole-feature"><div class="pole-feature-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></div>Piste gazon synthétique 15m</div>
+      <div class="pole-feature"><div class="pole-feature-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>Tous publics & tous âges</div>
+    </div>
+    <div class="pole-stats fade-up d4">
+      <div><div class="pole-stat-value">220</div><div class="pole-stat-label">m² plateau</div></div>
+      <div><div class="pole-stat-value">6</div><div class="pole-stat-label">kinésithérapeutes</div></div>
+      <div><div class="pole-stat-value">4</div><div class="pole-stat-label">cabinets isolés</div></div>
+    </div>
+  </div>
+  <div class="pole-visual fade-up"><img src="images/plateau-back.jpg" alt="Plateau Prime BACK"><div class="pole-visual-badge">Rééducation</div></div>
+</div></div></section>
+
+<!-- ÉQUIPEMENTS -->
+<section class="section section-dark" id="equipements"><div class="container">
+  <div class="section-label fade-up" style="color:var(--prime)">Nos technologies</div>
+  <h2 class="section-title fade-up d1" style="color:#fff">Des équipements de<br>référence mondiale.</h2>
+  <p class="section-desc fade-up d2">Chaque technologie est sélectionnée pour sa validation scientifique, sa fiabilité et son impact mesurable.</p>
+  <div class="equip-grid">
+    <div class="equip-card fade-up d1"><div class="equip-card-line fit"></div><span class="equip-card-pole fit">Prime Fit</span><h4>EGYM Smart System</h4><p>18 machines connectées. Résistance adaptative en temps réel. Onboarding digital, pilotage RFID, charge adaptative.</p><button class="equip-video-btn" onclick="openVideo('T9eu-o3-exw')"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>Voir la vidéo</button></div>
+    <div class="equip-card fade-up d2"><div class="equip-card-line well"></div><span class="equip-card-pole well">Prime Well</span><h4>Mecotec Cryo One Plus — Cryothérapie</h4><p>Leader mondial de la cryothérapie, équipant l'essentiel des clubs de Champions League. Cabine sur mesure pour gabarits sportifs, −110°C corps entier, 100% électrique.</p><button class="equip-video-btn" onclick="openVideo('pKkmgFNe3ao')"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>Voir la vidéo</button></div>
+    <div class="equip-card fade-up d3"><div class="equip-card-line well"></div><span class="equip-card-pole well">Prime Well</span><h4>BTL SisDuo</h4><p>Stimulation magnétique double champ. Six protocoles : Recovery Sport, Santé Fonctionnelle, Uro/Post-partum, Core & Back, Embody/Silhouette.</p><button class="equip-video-btn" onclick="openVideo('uPWLmSczovE')"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>Voir la vidéo</button></div>
+    <div class="equip-card fade-up d1"><div class="equip-card-line well"></div><span class="equip-card-pole well">Prime Well</span><h4>WellSystem MedWave Touch</h4><p>Hydrojet médical à sec. Relâchement musculaire, récupération, circulation. Zéro déshabillage, 20 minutes.</p><button class="equip-video-btn" onclick="openVideo('CVvv_ExEv3E')"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>Voir la vidéo</button></div>
+    <div class="equip-card fade-up d2"><div class="equip-card-line well"></div><span class="equip-card-pole well">Prime Well</span><h4>Sunlighten mPulse</h4><p>Sauna infrarouge spectre complet (NIR/MIR/FIR). SoloCarbon® breveté. Détox, anti-âge, régénération cellulaire.</p><button class="equip-video-btn" onclick="openVideo('MSEkugQUxXM')"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>Voir la vidéo</button></div>
+    <div class="equip-card fade-up d3"><div class="equip-card-line well"></div><span class="equip-card-pole well">Prime Well</span><h4>Air-Relax LED</h4><p>Photobiomodulation 9 longueurs d'onde. Rouge et infrarouge proche. Réparation tissulaire et réduction de l'inflammation.</p></div>
+    <div class="equip-card fade-up d1"><div class="equip-card-line well"></div><span class="equip-card-pole well">Prime Well</span><h4>JOLT — Pressothérapie</h4><p>Compression dynamique jambes et fessiers. Drainage lymphatique. En centre et en prêt à domicile VIP+.</p></div>
+    <div class="equip-card fade-up d2"><div class="equip-card-line global"></div><span class="equip-card-pole global">Bilan</span><h4>Multiscan FIT</h4><p>60 secondes, sans prise de sang. Composition corporelle, microcirculation, cardio, stress, charge vertébrale. Score Wellness.</p><button class="equip-video-btn" onclick="openVideo('0oJR5HW2cy4')"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>Voir la vidéo</button></div>
+    <div class="equip-card fade-up d3"><div class="equip-card-line back"></div><span class="equip-card-pole back">Prime Back</span><h4>TUR Isoforce & BTL R-Force</h4><p>Isocinétisme jusqu'à 700 Nm. Reprise d'appui robotisée 0-100% avec biofeedback visuel. Équipements uniques en AURA.</p><button class="equip-video-btn" onclick="openVideo('Y7flmch2Mwk')"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>Voir la vidéo</button></div>
+  </div>
+
+  <div class="partners fade-up">
+    <p class="partners-label">Nos partenaires équipementiers</p>
+    <div class="partners-logos">
+      <a href="https://www.mecotec.net/" target="_blank" rel="noopener"><img src="images/partner-mecotec.png" alt="Mecotec"></a>
+      <a href="https://www.btlmed.fr/" target="_blank" rel="noopener"><img src="images/partner-btl.png" alt="BTL Medical France"></a>
+      <a href="https://fr.egym.com/fr-fr" target="_blank" rel="noopener"><img src="images/partner-egym.png" alt="EGYM"></a>
+      <a href="https://www.medicavisie.com/fr/home-fr/" target="_blank" rel="noopener"><img src="images/partner-medicavisie.png" alt="Medicavisie"></a>
+    </div>
+  </div>
+
+</div></section>
+
+<!-- CONTACT -->
+<section class="section section-light" id="contact"><div class="container">
+  <div class="section-label fade-up" style="color:var(--prime)">Informations pratiques</div>
+  <h2 class="section-title fade-up d1">Rejoignez-nous<br>à <span style="color:var(--prime)">Bourg-en-Bresse.</span></h2>
+  <p class="section-desc fade-up d2">Prime Sport Santé ouvrira ses portes en septembre 2027 au sein du centre SANA, à proximité d'Ékinox — la salle du JL Bourg Basket.</p>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item fade-up d1"><div class="contact-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h4>Adresse</h4><p>Centre Prime Sport Santé / SANA<br>25 avenue du Maréchal Juin<br>01000 Bourg-en-Bresse</p></div></div>
+      <div class="contact-item fade-up d2"><div class="contact-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><h4>Horaires d'ouverture</h4><p>Lundi – Samedi : 8h – 20h</p></div></div>
+      <div class="contact-item fade-up d3"><div class="contact-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><h4>Contact</h4><p>contact@primesportsante.fr<br>www.primesportsante.fr</p></div></div>
+      <div class="contact-item fade-up d4"><div class="contact-icon"><svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div><h4>Un concept JL Bourg</h4><p>Né de l'expertise du JL Bourg Basket, en partenariat avec le centre médical SANA.<br><em>L'expertise du sport professionnel au service de tous.</em></p></div></div>
+    </div>
+    <div class="contact-map fade-up d2"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2790!2d5.2282!3d46.2044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c13eb5f6d3bef%3A0x4e3b0e96f1c1d1c1!2s25+Av.+du+Mar%C3%A9chal+Juin%2C+01000+Bourg-en-Bresse!5e0!3m2!1sfr!2sfr!4v1" allowfullscreen="" loading="lazy"></iframe></div>
+  </div>
+</div></section>
+
+<footer><div class="container">
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="images/logo-prime.png" alt="Prime Sport Santé"></div>
+    <div class="footer-links"><a href="#concept">Concept</a><a href="#fit">Prime Fit</a><a href="#well">Prime Well</a><a href="#back">Prime Back</a><a href="#contact">Contact</a></div>
+  </div>
+  <p class="footer-copy">&copy; 2027 <span>Prime Sport Santé</span> — Un concept <span>JL Bourg</span> &times; SANA &middot; Bourg-en-Bresse</p>
+</div></footer>
+
+<script>
+const o=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.fade-up').forEach(el=>o.observe(el));
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>80)});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-130,behavior:'smooth'})});});
+function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open')}
+function openVideo(id){var m=document.getElementById('videoModal');var f=document.getElementById('videoFrame');f.src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0';m.classList.add('active');document.body.style.overflow='hidden';}
+function closeVideoModal(){var m=document.getElementById('videoModal');var f=document.getElementById('videoFrame');f.src='';m.classList.remove('active');document.body.style.overflow='';}
+function closeVideo(e){if(e.target===document.getElementById('videoModal'))closeVideoModal();}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVideoModal();});
+</script>
+</body>
+</html>
